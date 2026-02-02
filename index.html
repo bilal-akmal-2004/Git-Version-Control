@@ -13,6 +13,13 @@
 
     <button id="rollButton">Click To Roll The Dice</button>
 
-    <script></script>
+    <script>
+      const rollButton = document.getElementById("rollButton");
+      const resultDisplay = document.getElementById("result");
+      rollButton.addEventListener("click", () => {
+        const roll = Math.floor(Math.random() * 6) + 1;
+        resultDisplay.textContent = rolls;
+      });
+    </script>
   </body>
 </html>
