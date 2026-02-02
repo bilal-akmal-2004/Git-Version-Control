@@ -21,6 +21,17 @@
       #result {
         font-size: 5rem;
         margin: 20px 0;
+        transition:
+          transform 0.2s ease,
+          opacity 0.2s ease;
+      }
+      .animate {
+        transform: scale(1.3);
+        opacity: 0.6;
+      }
+      .animate2 {
+        transform: scale(1.06);
+        opacity: 0.8;
       }
       #rollButton {
         padding: 10px 20px;
@@ -52,6 +63,14 @@
       const rollButton = document.getElementById("rollButton");
       const resultDisplay = document.getElementById("result");
       rollButton.addEventListener("click", () => {
+        resultDisplay.classList.add("animate");
+        rollButton.classList.add("animate2");
+        setTimeout(() => {
+          const roll = Math.floor(Math.random() * 6) + 1;
+          resultDisplay.textContent = roll;
+          resultDisplay.classList.remove("animate");
+          rollButton.classList.remove("animate2");
+        }, 200);
         const roll = Math.floor(Math.random() * 6) + 1;
         resultDisplay.textContent = roll;
       });
