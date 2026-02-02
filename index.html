@@ -33,6 +33,17 @@
         transform: scale(1.06);
         opacity: 0.8;
       }
+      .animate3 {
+        animation: spin 0.2s linear forwards;
+      }
+      @keyframes spin {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
       #rollButton {
         padding: 10px 20px;
         font-size: 1.5rem;
@@ -51,25 +62,29 @@
   <body>
     <div class="container">
       <div>
-        <h1>Dice Roller</h1>
+        <h1 id="header">Dice Roller</h1>
       </div>
 
       <h1 id="result">0</h1>
 
-      <button id="rollButton">Click To Roll The Dice</button>
+      <button id="rollButton">Roll Dice 🎲</button>
     </div>
 
     <script>
+      const header = document.getElementById("header");
       const rollButton = document.getElementById("rollButton");
       const resultDisplay = document.getElementById("result");
       rollButton.addEventListener("click", () => {
         resultDisplay.classList.add("animate");
         rollButton.classList.add("animate2");
+        void header.offsetWidth;
+        header.classList.add("animate3");
         setTimeout(() => {
           const roll = Math.floor(Math.random() * 6) + 1;
           resultDisplay.textContent = roll;
           resultDisplay.classList.remove("animate");
           rollButton.classList.remove("animate2");
+          header.classList.remove("animate3");
         }, 200);
         const roll = Math.floor(Math.random() * 6) + 1;
         resultDisplay.textContent = roll;
