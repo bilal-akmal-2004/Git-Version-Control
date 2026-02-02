@@ -16,19 +16,31 @@
         justify-content: space-around;
         height: 100vh;
         font-family: Arial, sans-serif;
-        background-color: rgb(184, 218, 218);
+        background-color: rgb(172, 255, 255);
       }
       #result {
         font-size: 5rem;
         margin: 20px 0;
+      }
+      #rollButton {
+        padding: 10px 20px;
+        font-size: 1.5rem;
+        cursor: pointer;
+        border: none;
+        border-radius: 5px;
+        background-color: #1bd3cd;
+        color: white;
+      }
+      #rollButton:hover {
+        background-color: #0ea09bb2;
+        border: #1bd3cd solid 2px;
       }
     </style>
   </head>
   <body>
     <div class="container">
       <div>
-        <h1>Creating Dice Roller App</h1>
-        <p>This is a simple dice roller application.</p>
+        <h1>Dice Roller</h1>
       </div>
 
       <h1 id="result">0</h1>
